@@ -1,0 +1,200 @@
+{
+  "config": {
+    "view": {"continuousWidth": 300, "continuousHeight": 300},
+    "axisX": {"labelAngle": 45}
+  },
+  "data": {"name": "data-ac0eefac8118804c69dbd0dd5f2bf7a9"},
+  "mark": {"type": "point", "filled": true},
+  "encoding": {
+    "color": {
+      "field": "sentiment_complete",
+      "scale": {
+        "domain": ["Positivo", "Neutrale", "Negativo"],
+        "range": ["#ADFC92", "#788BFF", "#F44E3F"]
+      },
+      "title": "Sentimento registrato",
+      "type": "nominal"
+    },
+    "opacity": {"value": 0.7},
+    "size": {"field": "Frequenza", "type": "quantitative"},
+    "tooltip": [
+      {"field": "Parola", "type": "nominal"},
+      {"field": "Frequenza", "type": "quantitative"},
+      {"field": "Frequenza", "type": "quantitative"}
+    ],
+    "x": {"field": "Parola", "title": "Parola", "type": "nominal"},
+    "y": {
+      "axis": {"labels": false},
+      "field": "Frequenza",
+      "title": "Frequenza",
+      "type": "quantitative"
+    }
+  },
+  "height": 600,
+  "params": [
+    {
+      "name": "param_1",
+      "select": {"type": "point", "fields": ["sentiment_complete"]},
+      "bind": {
+        "input": "radio",
+        "options": ["Positivo", "Neutrale", "Negativo", null],
+        "labels": ["Positivo ", "Neutrale ", "Negativo ", "Tutto"],
+        "name": "Selettore sentimento: "
+      }
+    },
+    {
+      "name": "param_1",
+      "select": {"type": "point", "fields": ["sentiment_complete"]},
+      "bind": {
+        "input": "radio",
+        "options": ["Positivo", "Neutrale", "Negativo", null],
+        "labels": ["Positivo ", "Neutrale ", "Negativo ", "Tutto"],
+        "name": "Selettore sentimento: "
+      }
+    }
+  ],
+  "title": "Sentimento sulle 30 parole più frequenti nel periodo aprile-giugno 2023",
+  "transform": [{"filter": {"param": "param_1"}}],
+  "width": 800,
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.8.0.json",
+  "datasets": {
+    "data-ac0eefac8118804c69dbd0dd5f2bf7a9": [
+      {"sentiment_complete": "Negativo", "Parola": "bad", "Frequenza": 627},
+      {"sentiment_complete": "Negativo", "Parola": "cant", "Frequenza": 1025},
+      {"sentiment_complete": "Negativo", "Parola": "doesnt", "Frequenza": 1069},
+      {"sentiment_complete": "Negativo", "Parola": "dont", "Frequenza": 2368},
+      {"sentiment_complete": "Negativo", "Parola": "even", "Frequenza": 1549},
+      {"sentiment_complete": "Negativo", "Parola": "fucking", "Frequenza": 261},
+      {"sentiment_complete": "Negativo", "Parola": "get", "Frequenza": 1770},
+      {"sentiment_complete": "Negativo", "Parola": "going", "Frequenza": 937},
+      {"sentiment_complete": "Negativo", "Parola": "islam", "Frequenza": 102},
+      {"sentiment_complete": "Negativo", "Parola": "know", "Frequenza": 1365},
+      {"sentiment_complete": "Negativo", "Parola": "like", "Frequenza": 2228},
+      {"sentiment_complete": "Negativo", "Parola": "make", "Frequenza": 1319},
+      {"sentiment_complete": "Negativo", "Parola": "need", "Frequenza": 805},
+      {"sentiment_complete": "Negativo", "Parola": "one", "Frequenza": 1574},
+      {"sentiment_complete": "Negativo", "Parola": "people", "Frequenza": 2876},
+      {"sentiment_complete": "Negativo", "Parola": "problem", "Frequenza": 290},
+      {"sentiment_complete": "Negativo", "Parola": "really", "Frequenza": 1057},
+      {"sentiment_complete": "Negativo", "Parola": "right", "Frequenza": 447},
+      {"sentiment_complete": "Negativo", "Parola": "say", "Frequenza": 634},
+      {"sentiment_complete": "Negativo", "Parola": "see", "Frequenza": 122},
+      {"sentiment_complete": "Negativo", "Parola": "shit", "Frequenza": 1038},
+      {
+        "sentiment_complete": "Negativo",
+        "Parola": "something",
+        "Frequenza": 942
+      },
+      {"sentiment_complete": "Negativo", "Parola": "thats", "Frequenza": 1264},
+      {"sentiment_complete": "Negativo", "Parola": "thing", "Frequenza": 366},
+      {"sentiment_complete": "Negativo", "Parola": "think", "Frequenza": 1590},
+      {"sentiment_complete": "Negativo", "Parola": "time", "Frequenza": 1382},
+      {"sentiment_complete": "Negativo", "Parola": "use", "Frequenza": 1550},
+      {"sentiment_complete": "Negativo", "Parola": "used", "Frequenza": 507},
+      {"sentiment_complete": "Negativo", "Parola": "using", "Frequenza": 1156},
+      {"sentiment_complete": "Negativo", "Parola": "want", "Frequenza": 641},
+      {"sentiment_complete": "Negativo", "Parola": "way", "Frequenza": 1050},
+      {"sentiment_complete": "Negativo", "Parola": "work", "Frequenza": 1204},
+      {"sentiment_complete": "Negativo", "Parola": "world", "Frequenza": 105},
+      {"sentiment_complete": "Negativo", "Parola": "would", "Frequenza": 1978},
+      {"sentiment_complete": "Negativo", "Parola": "write", "Frequenza": 875},
+      {"sentiment_complete": "Negativo", "Parola": "wrong", "Frequenza": 981},
+      {"sentiment_complete": "Negativo", "Parola": "youre", "Frequenza": 1164},
+      {"sentiment_complete": "Neutrale", "Parola": "already", "Frequenza": 74},
+      {"sentiment_complete": "Neutrale", "Parola": "ask", "Frequenza": 379},
+      {"sentiment_complete": "Neutrale", "Parola": "bot", "Frequenza": 79},
+      {"sentiment_complete": "Neutrale", "Parola": "bro", "Frequenza": 72},
+      {"sentiment_complete": "Neutrale", "Parola": "cant", "Frequenza": 317},
+      {"sentiment_complete": "Neutrale", "Parola": "chat", "Frequenza": 381},
+      {"sentiment_complete": "Neutrale", "Parola": "day", "Frequenza": 265},
+      {"sentiment_complete": "Neutrale", "Parola": "deleted", "Frequenza": 947},
+      {"sentiment_complete": "Neutrale", "Parola": "doesnt", "Frequenza": 180},
+      {"sentiment_complete": "Neutrale", "Parola": "dont", "Frequenza": 607},
+      {"sentiment_complete": "Neutrale", "Parola": "even", "Frequenza": 335},
+      {"sentiment_complete": "Neutrale", "Parola": "get", "Frequenza": 530},
+      {"sentiment_complete": "Neutrale", "Parola": "going", "Frequenza": 85},
+      {"sentiment_complete": "Neutrale", "Parola": "got", "Frequenza": 364},
+      {"sentiment_complete": "Neutrale", "Parola": "internet", "Frequenza": 96},
+      {"sentiment_complete": "Neutrale", "Parola": "isnt", "Frequenza": 79},
+      {"sentiment_complete": "Neutrale", "Parola": "know", "Frequenza": 487},
+      {"sentiment_complete": "Neutrale", "Parola": "make", "Frequenza": 290},
+      {"sentiment_complete": "Neutrale", "Parola": "need", "Frequenza": 322},
+      {"sentiment_complete": "Neutrale", "Parola": "one", "Frequenza": 573},
+      {"sentiment_complete": "Neutrale", "Parola": "people", "Frequenza": 423},
+      {"sentiment_complete": "Neutrale", "Parola": "phone", "Frequenza": 37},
+      {"sentiment_complete": "Neutrale", "Parola": "read", "Frequenza": 38},
+      {
+        "sentiment_complete": "Neutrale",
+        "Parola": "remindme",
+        "Frequenza": 231
+      },
+      {"sentiment_complete": "Neutrale", "Parola": "removed", "Frequenza": 45},
+      {"sentiment_complete": "Neutrale", "Parola": "right", "Frequenza": 151},
+      {"sentiment_complete": "Neutrale", "Parola": "say", "Frequenza": 336},
+      {"sentiment_complete": "Neutrale", "Parola": "see", "Frequenza": 201},
+      {
+        "sentiment_complete": "Neutrale",
+        "Parola": "something",
+        "Frequenza": 42
+      },
+      {"sentiment_complete": "Neutrale", "Parola": "tell", "Frequenza": 174},
+      {"sentiment_complete": "Neutrale", "Parola": "thats", "Frequenza": 479},
+      {"sentiment_complete": "Neutrale", "Parola": "thing", "Frequenza": 87},
+      {"sentiment_complete": "Neutrale", "Parola": "think", "Frequenza": 497},
+      {"sentiment_complete": "Neutrale", "Parola": "time", "Frequenza": 401},
+      {"sentiment_complete": "Neutrale", "Parola": "use", "Frequenza": 721},
+      {"sentiment_complete": "Neutrale", "Parola": "used", "Frequenza": 195},
+      {"sentiment_complete": "Neutrale", "Parola": "using", "Frequenza": 332},
+      {"sentiment_complete": "Neutrale", "Parola": "way", "Frequenza": 239},
+      {"sentiment_complete": "Neutrale", "Parola": "work", "Frequenza": 434},
+      {"sentiment_complete": "Neutrale", "Parola": "would", "Frequenza": 549},
+      {"sentiment_complete": "Neutrale", "Parola": "write", "Frequenza": 380},
+      {"sentiment_complete": "Neutrale", "Parola": "wrote", "Frequenza": 43},
+      {"sentiment_complete": "Neutrale", "Parola": "youre", "Frequenza": 202},
+      {"sentiment_complete": "Positivo", "Parola": "better", "Frequenza": 2660},
+      {"sentiment_complete": "Positivo", "Parola": "bot", "Frequenza": 709},
+      {"sentiment_complete": "Positivo", "Parola": "dont", "Frequenza": 4635},
+      {"sentiment_complete": "Positivo", "Parola": "even", "Frequenza": 3380},
+      {"sentiment_complete": "Positivo", "Parola": "get", "Frequenza": 3572},
+      {"sentiment_complete": "Positivo", "Parola": "going", "Frequenza": 1913},
+      {"sentiment_complete": "Positivo", "Parola": "good", "Frequenza": 4156},
+      {
+        "sentiment_complete": "Positivo",
+        "Parola": "internet",
+        "Frequenza": 635
+      },
+      {"sentiment_complete": "Positivo", "Parola": "know", "Frequenza": 3048},
+      {"sentiment_complete": "Positivo", "Parola": "like", "Frequenza": 9205},
+      {"sentiment_complete": "Positivo", "Parola": "make", "Frequenza": 3132},
+      {"sentiment_complete": "Positivo", "Parola": "much", "Frequenza": 2310},
+      {"sentiment_complete": "Positivo", "Parola": "need", "Frequenza": 2226},
+      {"sentiment_complete": "Positivo", "Parola": "one", "Frequenza": 3544},
+      {"sentiment_complete": "Positivo", "Parola": "people", "Frequenza": 5405},
+      {"sentiment_complete": "Positivo", "Parola": "really", "Frequenza": 2455},
+      {"sentiment_complete": "Positivo", "Parola": "right", "Frequenza": 295},
+      {"sentiment_complete": "Positivo", "Parola": "say", "Frequenza": 274},
+      {"sentiment_complete": "Positivo", "Parola": "see", "Frequenza": 2244},
+      {
+        "sentiment_complete": "Positivo",
+        "Parola": "something",
+        "Frequenza": 2550
+      },
+      {"sentiment_complete": "Positivo", "Parola": "sure", "Frequenza": 269},
+      {"sentiment_complete": "Positivo", "Parola": "thats", "Frequenza": 2893},
+      {"sentiment_complete": "Positivo", "Parola": "things", "Frequenza": 2396},
+      {"sentiment_complete": "Positivo", "Parola": "think", "Frequenza": 4064},
+      {"sentiment_complete": "Positivo", "Parola": "time", "Frequenza": 3180},
+      {"sentiment_complete": "Positivo", "Parola": "use", "Frequenza": 4411},
+      {"sentiment_complete": "Positivo", "Parola": "used", "Frequenza": 1269},
+      {"sentiment_complete": "Positivo", "Parola": "using", "Frequenza": 2590},
+      {"sentiment_complete": "Positivo", "Parola": "want", "Frequenza": 1697},
+      {"sentiment_complete": "Positivo", "Parola": "way", "Frequenza": 2841},
+      {"sentiment_complete": "Positivo", "Parola": "well", "Frequenza": 2741},
+      {"sentiment_complete": "Positivo", "Parola": "work", "Frequenza": 3201},
+      {"sentiment_complete": "Positivo", "Parola": "would", "Frequenza": 5244},
+      {"sentiment_complete": "Positivo", "Parola": "write", "Frequenza": 1696},
+      {"sentiment_complete": "Positivo", "Parola": "writing", "Frequenza": 661},
+      {"sentiment_complete": "Positivo", "Parola": "youre", "Frequenza": 2247}
+    ]
+  }
+}

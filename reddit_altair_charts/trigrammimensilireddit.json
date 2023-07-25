@@ -1,0 +1,271 @@
+{
+  "config": {
+    "view": {"continuousWidth": 300, "continuousHeight": 300},
+    "axisX": {"labelAlign": "left", "labelAngle": 45, "labelPadding": 15},
+    "legend": {"orient": "top-right"}
+  },
+  "data": {"name": "data-4c4957fbea79566afd0e7e929d421aca"},
+  "mark": {"type": "bar"},
+  "encoding": {
+    "color": {"field": "Sentimento", "type": "quantitative"},
+    "opacity": {"condition": {"param": "param_3", "value": 1}, "value": 0.3},
+    "tooltip": [
+      {"field": "Trigram", "title": "Trigramma", "type": "nominal"},
+      {
+        "field": "Frequency",
+        "title": "Frequenza assoluta",
+        "type": "quantitative"
+      }
+    ],
+    "x": {
+      "field": "Trigram",
+      "sort": "-y",
+      "title": "Trigramma",
+      "type": "nominal"
+    },
+    "y": {
+      "field": "Frequency",
+      "title": "Frequenza registrata",
+      "type": "quantitative"
+    }
+  },
+  "height": 600,
+  "params": [
+    {
+      "name": "param_2",
+      "select": {"type": "point", "fields": ["MonthName"]},
+      "bind": {
+        "input": "select",
+        "options": ["Aprile", "Maggio", "Giugno", null],
+        "labels": ["Aprile ", "Maggio ", "Giugno ", "Tutto"],
+        "name": "Selettore del periodo: "
+      }
+    },
+    {
+      "name": "param_3",
+      "select": {"type": "point", "fields": ["Trigram", "Frequency"]}
+    }
+  ],
+  "resolve": {"scale": {"y": "independent"}},
+  "title": {
+    "text": "Top Trigrammi sul periodo aprile-giugno 2023",
+    "subtitle": "Dati relativi al dataset di Reddit"
+  },
+  "transform": [{"filter": {"param": "param_2"}}],
+  "width": 800,
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.8.0.json",
+  "datasets": {
+    "data-4c4957fbea79566afd0e7e929d421aca": [
+      {
+        "Month": 4,
+        "Trigram": "smart robot response",
+        "Frequency": 217,
+        "Sentimento": 0.4019,
+        "MonthName": "Aprile"
+      },
+      {
+        "Month": 4,
+        "Trigram": "automatic tldr shorter",
+        "Frequency": 43,
+        "Sentimento": 0,
+        "MonthName": "Aprile"
+      },
+      {
+        "Month": 4,
+        "Trigram": "robot summary automatic",
+        "Frequency": 43,
+        "Sentimento": 0,
+        "MonthName": "Aprile"
+      },
+      {
+        "Month": 4,
+        "Trigram": "smart robot summary",
+        "Frequency": 43,
+        "Sentimento": 0.4019,
+        "MonthName": "Aprile"
+      },
+      {
+        "Month": 4,
+        "Trigram": "good sense humor",
+        "Frequency": 47,
+        "Sentimento": 0.6124,
+        "MonthName": "Aprile"
+      },
+      {
+        "Month": 4,
+        "Trigram": "summary automatic tldr",
+        "Frequency": 43,
+        "Sentimento": 0,
+        "MonthName": "Aprile"
+      },
+      {
+        "Month": 4,
+        "Trigram": "think based comments",
+        "Frequency": 107,
+        "Sentimento": 0,
+        "MonthName": "Aprile"
+      },
+      {
+        "Month": 4,
+        "Trigram": "heres think based",
+        "Frequency": 110,
+        "Sentimento": 0,
+        "MonthName": "Aprile"
+      },
+      {
+        "Month": 4,
+        "Trigram": "robot response automatic",
+        "Frequency": 217,
+        "Sentimento": 0,
+        "MonthName": "Aprile"
+      },
+      {
+        "Month": 4,
+        "Trigram": "based comments like",
+        "Frequency": 60,
+        "Sentimento": 0.3612,
+        "MonthName": "Aprile"
+      },
+      {
+        "Month": 6,
+        "Trigram": "wrote explanation breakdown",
+        "Frequency": 28,
+        "Sentimento": 0,
+        "MonthName": "Giugno"
+      },
+      {
+        "Month": 6,
+        "Trigram": "feel error message",
+        "Frequency": 19,
+        "Sentimento": -0.4019,
+        "MonthName": "Giugno"
+      },
+      {
+        "Month": 6,
+        "Trigram": "disagree strongly disagree",
+        "Frequency": 20,
+        "Sentimento": -0.4767,
+        "MonthName": "Giugno"
+      },
+      {
+        "Month": 6,
+        "Trigram": "black mirror episode",
+        "Frequency": 23,
+        "Sentimento": 0,
+        "MonthName": "Giugno"
+      },
+      {
+        "Month": 6,
+        "Trigram": "error message moderators",
+        "Frequency": 25,
+        "Sentimento": -0.4019,
+        "MonthName": "Giugno"
+      },
+      {
+        "Month": 6,
+        "Trigram": "action performed automatically",
+        "Frequency": 26,
+        "Sentimento": 0,
+        "MonthName": "Giugno"
+      },
+      {
+        "Month": 6,
+        "Trigram": "bot action performed",
+        "Frequency": 26,
+        "Sentimento": 0,
+        "MonthName": "Giugno"
+      },
+      {
+        "Month": 6,
+        "Trigram": "explanation breakdown list",
+        "Frequency": 29,
+        "Sentimento": 0,
+        "MonthName": "Giugno"
+      },
+      {
+        "Month": 6,
+        "Trigram": "toolkit feel error",
+        "Frequency": 17,
+        "Sentimento": -0.4019,
+        "MonthName": "Giugno"
+      },
+      {
+        "Month": 6,
+        "Trigram": "moderation toolkit feel",
+        "Frequency": 17,
+        "Sentimento": 0,
+        "MonthName": "Giugno"
+      },
+      {
+        "Month": 5,
+        "Trigram": "reminded reduce spam",
+        "Frequency": 43,
+        "Sentimento": -0.3612,
+        "MonthName": "Maggio"
+      },
+      {
+        "Month": 5,
+        "Trigram": "link send reminded",
+        "Frequency": 43,
+        "Sentimento": 0,
+        "MonthName": "Maggio"
+      },
+      {
+        "Month": 5,
+        "Trigram": "utc remind link",
+        "Frequency": 43,
+        "Sentimento": 0,
+        "MonthName": "Maggio"
+      },
+      {
+        "Month": 5,
+        "Trigram": "mir spanisch vor",
+        "Frequency": 57,
+        "Sentimento": 0,
+        "MonthName": "Maggio"
+      },
+      {
+        "Month": 5,
+        "Trigram": "das kommt mir",
+        "Frequency": 62,
+        "Sentimento": 0,
+        "MonthName": "Maggio"
+      },
+      {
+        "Month": 5,
+        "Trigram": "verstehe nur bahnhof",
+        "Frequency": 63,
+        "Sentimento": 0,
+        "MonthName": "Maggio"
+      },
+      {
+        "Month": 5,
+        "Trigram": "large language model",
+        "Frequency": 69,
+        "Sentimento": 0,
+        "MonthName": "Maggio"
+      },
+      {
+        "Month": 5,
+        "Trigram": "ich verstehe nur",
+        "Frequency": 74,
+        "Sentimento": 0,
+        "MonthName": "Maggio"
+      },
+      {
+        "Month": 5,
+        "Trigram": "send reminded reduce",
+        "Frequency": 43,
+        "Sentimento": 0,
+        "MonthName": "Maggio"
+      },
+      {
+        "Month": 5,
+        "Trigram": "kommt mir spanisch",
+        "Frequency": 57,
+        "Sentimento": 0,
+        "MonthName": "Maggio"
+      }
+    ]
+  }
+}

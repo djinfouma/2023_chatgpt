@@ -1,0 +1,297 @@
+body, h1, h2, h3, h4, h5{
+    font-family: "Raleway", sans-serif;
+}
+
+h1 {
+    text-align: center;
+}
+
+button {
+    cursor: pointer;
+    border-radius: 5px;
+    padding: 1.5%;
+}
+
+
+.buttonActive{
+    background-color: #75AB9E!important;
+    color: white!important;
+}
+p, #reddit_future_use, #reddit_use {
+    font-size: large;
+    font-size: 18px;
+    line-height: 1.7;
+    margin-bottom: 36px;
+    letter-spacing: 0.35px;
+ }
+body.w3-light-grey w3-content{
+    max-width: 1600px;
+}
+
+div.w3-main{
+    margin-left: 300px;
+}
+
+#titoli
+.main-titles {
+    font-weight: 700;
+    font-size: 2rem;
+    line-height: 2.25rem;
+    margin: 0 auto;
+    padding-bottom: 1rem;
+}
+
+.TableOfContentsContainer {
+    padding-top: 10px;
+    position: sticky;
+
+}
+.ElementWrapper-choicer {
+    cursor: pointer;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    margin-top: 12px;
+    position: relative;
+    width: auto;
+    text-decoration: none;
+}
+.pallino {
+    background-color:#75AB9E; 
+    border: 2px solid #fff;
+    border-radius: 18px;
+    display: inline-block;
+    height: 10px;
+    line-height: 1.5rem;
+    margin: auto 12px auto 0;
+    max-width: 10px;
+    min-height: 10px;
+    min-width: 10px;
+    position: relative;
+    width: 10%;
+}
+.pallino::after {
+    content: '';
+    position: absolute;
+    top: -4px;
+    left: -4px;
+    right: -4px;
+    bottom: -4px;
+    background: #000000;
+    border-radius: 18px;
+    z-index: -1;
+}
+.scritta {
+    display: inline-block;
+    line-height: 1.5rem;
+    max-width: 165px;
+    vertical-align: middle;
+    font-family: 'Belanosima', sans-serif;
+}
+.css-nx0d73-TocLine {
+    background: rgb(0, 0, 0);
+    bottom: 8px;
+    height: calc((95% - 91px) - -10px);
+    margin-bottom: 36px;
+    margin-left: 6px;
+    position: absolute;
+    width: 1px;
+    z-index: 39;
+}
+.css-nx0d73-TocLine {
+    background: rgb(0, 0, 0);
+    bottom: 8px;
+    height: calc((95% - 91px) - -10px);
+    margin-bottom: 36px;
+    margin-left: 6px;
+    position: absolute;
+    width: 1px;
+    z-index: 39;
+}
+.scritta-menu {
+    display: inline-block;
+    line-height: 1.5rem;
+    max-width: 165px;
+    vertical-align: middle;
+    width: 90%;
+}
+.menu-line {
+    background: rgb(0, 0, 0);
+    bottom: 0px;
+    width: calc((100% - 60px) - 25px);
+    margin-bottom: 36px;
+    margin-left: 7px;
+    position: absolute;
+    width: 1px;
+    z-index: -2;
+}
+
+.visualization {
+    display: none; /* Hide all visualizations by default */
+  }
+
+  .visualization.active {
+    display: block; /* Show the active visualization */
+  }
+
+@media (max-width: 600px) {
+  #sidebar-container {
+    display: none;
+  }
+}
+.main-titles {
+    font-size: 3rem;
+    line-height: 3.375rem;
+    border-bottom: 0.4rem solid #75AB9E;
+    margin: 0 auto;
+    padding-bottom: 1rem;
+}
+.w3-third img{
+    margin-bottom: 6px;
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+.w3-third img:hover{
+    opacity: 1;
+}
+
+#mySidebar{
+    z-index: 3;
+    width: 300px;
+    font-weight: bold;
+}
+
+#myOverlay{
+    cursor:pointer;
+}
+
+div.w3-hide-large{
+    margin-top: 83px;
+}
+
+div.w3-row-padding{
+    margin: 0 -16px;
+}
+
+
+div.w3-container w3-padding-small w3-center w3-grey{
+    width: 95%;
+}
+
+div.w3-container w3-padding-small w3-center w3-grey{
+    width: 85%;
+}
+
+div.w3-container w3-padding-small w3-center w3-grey{
+    width: 80%;
+}
+
+div.w3-row-padding{
+    margin: 0 -16px;
+}
+
+div.w3-content w3-justify{
+    max-width: 600px;
+}
+
+.image-container{
+    float: left;
+    margin-right: 2%;
+    width: 50%;
+}
+
+.image-container-right{
+    float: right;
+    margin-left: 2%;
+    width: 50%;
+}
+
+figure {
+    text-align: center;
+}
+
+figcaption {
+    font-size: 14px;
+    margin-top: 1%;
+}
+
+div.w3-row-padding{
+    margin: 0 -16px;
+}
+
+div.w3-third img{
+    width: 100%;
+}
+
+#authors, #teachers, #project {
+    list-style-type: none;
+    padding-left: 0%;
+}
+
+#intelligenza, #storia, #utilizzi{
+    background-color: #F1F1F1!important;
+}
+
+#sentiment, #trends {
+    background-color: #616161!important;
+    color: #F1F1F1!important;
+}
+
+#title-sidebar{
+    padding-left: 12px;
+}
+
+.force-center{
+    margin: 0 auto;
+    display: block;
+}
+
+.graphics-btn-container{
+    margin-bottom: 10px;
+}
+
+#graphics-container-words2 {
+    display: none;
+    padding-top: 10px;
+}
+
+/* Stile per grafici importato da codice di Giorgia*/
+.vis.vega-embed {
+    width: 100%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1%;
+}
+
+.vega-embed summary {
+    display: none;
+}
+
+.vis.vega-embed details,
+.vis.vega-embed details summary {
+    position: relative;
+    display: none;
+}
+
+@media (max-width: 600px) {
+    vis {
+        width: 50%;
+        overflow: hidden;
+    }
+}
+
+ul {
+    font-size: 18px;
+}
+
+.visualization {
+    display: none; /* Hide all visualizations by default */
+}
+
+.green {
+    color: #75AB9E;
+}
+

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    #vis.vega-embed {
+      width: 100%;
+      display: flex;
+    }
+
+    #vis.vega-embed details,
+    #vis.vega-embed details summary {
+      position: relative;
+    }
+  </style>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-lite@5.8.0"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+</head>
+<body>
+  <div id="vis"></div>
+  <script>
+    (function(vegaEmbed) {
+      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}, "axis": {"grid": false}, "legend": {"orient": "top"}}, "data": {"name": "data-800eee6c893eaac0f5534d5c99f91252"}, "mark": {"type": "line", "opacity": 0.1}, "encoding": {"color": {"field": "sentiment_complete", "legend": {"orient": "right"}, "scale": {"domain": ["Positivo", "Negativo", "Neutrale"], "range": ["#ADFC92", "#F44E3F", "#788BFF"]}, "title": "Sentimento registrato", "type": "nominal"}, "opacity": {"value": 0.9}, "x": {"axis": {"format": "%B %Y", "tickCount": 12, "title": "Periodo"}, "field": "Comment date", "type": "temporal"}, "y": {"axis": {"title": "Numero di commenti"}, "field": "Value", "type": "quantitative"}}, "height": 600, "title": {"text": "Evoluzione del sentimento verso ChatGPT nell'arco dei mesi", "subtitle": "Visualizzazione dei valori relativi al dataset di commenti"}, "width": 800, "$schema": "https://vega.github.io/schema/vega-lite/v5.8.0.json", "datasets": {"data-800eee6c893eaac0f5534d5c99f91252": [{"Comment date": "April 2023", "sentiment_complete": "Negativo", "Value": 4717}, {"Comment date": "May 2023", "sentiment_complete": "Negativo", "Value": 9471}, {"Comment date": "June 2023", "sentiment_complete": "Negativo", "Value": 2339}, {"Comment date": "April 2023", "sentiment_complete": "Neutrale", "Value": 5138}, {"Comment date": "May 2023", "sentiment_complete": "Neutrale", "Value": 10454}, {"Comment date": "June 2023", "sentiment_complete": "Neutrale", "Value": 3002}, {"Comment date": "April 2023", "sentiment_complete": "Positivo", "Value": 9626}, {"Comment date": "May 2023", "sentiment_complete": "Positivo", "Value": 18334}, {"Comment date": "June 2023", "sentiment_complete": "Positivo", "Value": 4897}]}};
+      var embedOpt = {"mode": "vega-lite"};
+
+      function showError(el, error){
+          el.innerHTML = ('<div style="color:red;">'
+                          + '<p>JavaScript Error: ' + error.message + '</p>'
+                          + "<p>This usually means there's a typo in your chart specification. "
+                          + "See the javascript console for the full traceback.</p>"
+                          + '</div>');
+          throw error;
+      }
+      const el = document.getElementById('vis');
+      vegaEmbed("#vis", spec, embedOpt)
+        .catch(error => showError(el, error));
+    })(vegaEmbed);
+
+  </script>
+</body>
+</html>

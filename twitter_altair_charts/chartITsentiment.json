@@ -1,0 +1,73 @@
+{
+  "config": {
+    "view": {"continuousWidth": 300, "continuousHeight": 300},
+    "axis": {"grid": false},
+    "legend": {"orient": "top"}
+  },
+  "data": {"name": "data-b2efc7f4f33c8856302f0d7c551f7508"},
+  "mark": {"type": "line", "opacity": 0.1},
+  "encoding": {
+    "color": {
+      "field": "Sentimento",
+      "legend": {"orient": "right"},
+      "scale": {
+        "domain": ["Positivo", "Neutrale", "Negativo"],
+        "range": ["#ADFC92", "#788BFF", "#F44E3F"]
+      },
+      "title": "Sentimento registrato",
+      "type": "nominal"
+    },
+    "opacity": {"value": 0.9},
+    "x": {
+      "axis": {"format": "%B %Y", "tickCount": 12, "title": "Periodo"},
+      "field": "date",
+      "type": "temporal"
+    },
+    "y": {
+      "axis": {"title": "Numero di tweets"},
+      "field": "Value",
+      "type": "quantitative"
+    }
+  },
+  "height": 600,
+  "title": {
+    "text": "Evoluzione del sentimento verso ChatGPT nell'arco dei mesi",
+    "subtitle": "Visualizzazione dei valori relativi al dataset di tweets italiani"
+  },
+  "width": 800,
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.8.0.json",
+  "datasets": {
+    "data-b2efc7f4f33c8856302f0d7c551f7508": [
+      {"date": "September 2022", "Sentimento": "Negativo", "Value": 2},
+      {"date": "October 2022", "Sentimento": "Negativo", "Value": 1},
+      {"date": "November 2022", "Sentimento": "Negativo", "Value": 6},
+      {"date": "December 2022", "Sentimento": "Negativo", "Value": 89},
+      {"date": "January 2023", "Sentimento": "Negativo", "Value": 311},
+      {"date": "February 2023", "Sentimento": "Negativo", "Value": 198},
+      {"date": "March 2023", "Sentimento": "Negativo", "Value": 475},
+      {"date": "April 2023", "Sentimento": "Negativo", "Value": 21},
+      {"date": "May 2023", "Sentimento": "Negativo", "Value": 32},
+      {"date": "June 2023", "Sentimento": "Negativo", "Value": 25},
+      {"date": "September 2022", "Sentimento": "Neutrale", "Value": 39},
+      {"date": "October 2022", "Sentimento": "Neutrale", "Value": 29},
+      {"date": "November 2022", "Sentimento": "Neutrale", "Value": 29},
+      {"date": "December 2022", "Sentimento": "Neutrale", "Value": 1049},
+      {"date": "January 2023", "Sentimento": "Neutrale", "Value": 5222},
+      {"date": "February 2023", "Sentimento": "Neutrale", "Value": 3050},
+      {"date": "March 2023", "Sentimento": "Neutrale", "Value": 6207},
+      {"date": "April 2023", "Sentimento": "Neutrale", "Value": 437},
+      {"date": "May 2023", "Sentimento": "Neutrale", "Value": 450},
+      {"date": "June 2023", "Sentimento": "Neutrale", "Value": 387},
+      {"date": "September 2022", "Sentimento": "Positivo", "Value": 9},
+      {"date": "October 2022", "Sentimento": "Positivo", "Value": 5},
+      {"date": "November 2022", "Sentimento": "Positivo", "Value": null},
+      {"date": "December 2022", "Sentimento": "Positivo", "Value": 215},
+      {"date": "January 2023", "Sentimento": "Positivo", "Value": 891},
+      {"date": "February 2023", "Sentimento": "Positivo", "Value": 537},
+      {"date": "March 2023", "Sentimento": "Positivo", "Value": 1118},
+      {"date": "April 2023", "Sentimento": "Positivo", "Value": 65},
+      {"date": "May 2023", "Sentimento": "Positivo", "Value": 75},
+      {"date": "June 2023", "Sentimento": "Positivo", "Value": 76}
+    ]
+  }
+}

@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<title>ChatGPT</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="file1.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="style.css">
+<link rel="icon" type="image/x-icon" href="img/robot.png">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Belanosima&family=Pacifico&display=swap');
+</style>
+<script src="script.js" defer></script>
+<!--<script type="text/javascript" src="grafici.js"></script>-->
+  <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.8.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+</head>
+<body class="w3-light-grey w3-content">
+
+<!-- Sidebar/menu -->
+<nav class="w3-sidebar w3-bar-block w3-white w3-animate-left w3-text-grey w3-collapse w3-top" id="mySidebar"><br>
+  <h3 class="w3-padding-64" id="title-sidebar"><b>ChatGPT</b></h3>
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-padding w3-hide-large">CLOSE</a>
+  <a href="#" onclick="w3_close()" class="w3-bar-item w3-button-sidebar">DALL-E</a>
+  <a href="#storia" onclick="w3_close()" class="w3-bar-item w3-button-sidebar">Storia di un chatbot</a>
+  <a href="#sentiment" onclick="w3_close()" class="w3-bar-item w3-button-sidebar">Ti odio o ti amo?</a>
+  <a href="#utilizzi" onclick="w3_close()" class="w3-bar-item w3-button-sidebar">Interazione uomo macchina</a>
+  <a href="#trends" onclick="w3_close()" class="w3-bar-item w3-button-sidebar">Parole e tendenze</a>
+  <a href="#intelligenza" onclick="w3_close()" class="w3-bar-item w3-button-sidebar">Intelligenza Artificiale</a>
+</nav>
+
+<!-- Top menu on small screens -->
+<header class="w3-container w3-top w3-hide-large w3-white w3-xlarge w3-padding-16">
+  <span class="w3-left w3-padding">ChatGPT</span>
+  <a href="javascript:void(0)" class="w3-right w3-button w3-white" onclick="w3_open()">☰</a>
+</header>
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" title="close side menu" id="myOverlay"></div>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main">
+
+  <!-- Push down content on small screens -->
+  <div class="w3-hide-large"></div>
+
+  <!-- Photo grid -->
+  <div class="w3-row">
+    <div class="w3-third">
+      <img src="img/dall-e7.png" onclick="onClick(this)" alt="DALL-E è un prodotto basato su Intelligenza artificiale sviluppato da OpenAI">
+    </div>
+
+    <div class="w3-third">
+      <img src="img/dall-e8.png" onclick="onClick(this)" alt="Permette di creare immagini inserendo una stringa di testo, specificando lo stile desiderato">
+    </div>
+
+    <div class="w3-third">
+      <img src="img/dall-e9.png" onclick="onClick(this)" alt="Robot e umani giocano a carte e bevono mojito in una foresta tropicale con tanti animali, quadri surreali e stile futuristico">
+    </div>
+  </div>
+
+
+  <!-- Modal for full size images on click-->
+  <div id="modal01" class="w3-modal w3-black" onclick="this.style.display='none'">
+    <div class="w3-button w3-black w3-xlarge w3-display-topright">×</div>
+    <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
+      <p id="caption"></p>
+      <div style="float: right">
+
+      </div>
+      <div id="img01-container"></div>
+
+    </div>
+  </div>
+ <!-- Storia section -->
+  <div class="w3-container w3-center w3-padding-32" id="storia">
+    <div class="w3-content w3-justify">
+      <div class="w3-container w3-center w3-padding-32">
+
+        <h1 class="main-titles"><b>Storia di un chatbot</b></h1>
+
+        <div id="top-of-toc1" class="css-1ez01tu-BodyContainer e1s8k40s0">
+          <div class="css-uiylu1-LeftRailComponents e1s8k40s2">
+            <div class="TocContainer">
+              <div id="toc-block1" class="TableOfContentsContainer">
+                <a href="#sez1" id="toc-element-01" class="ElementWrapper-choicer">
+                  <div class="pallino"></div>
+                  <div class="scritta">
+                    <div>Che cosa è ChatGPT</div>
+                  </div>
+                </a>
+                <a href="#sez2" id="toc-element-1-1" class="ElementWrapper-choicer">
+                  <div class="pallino"></div>
+                  <div class="scritta">
+                    <div>Come funziona ChatGPT</div>
+                  </div>
+                </a>
+                <a href="#sez3" id="toc-element-3-1" class="ElementWrapper-choicer">
+                  <div class="pallino"></div>
+                  <div class="scritta">
+                    <div>I neuroni artificiali</div>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <img src="img/dall-e10.png" alt="Robot e umani a un tavolo che bevono" class="w3-image w3-center w3-padding-32" width="600" height="650">
+        <div class="w3-content w3-justify">
+          <h2 id="sez1">Cos’è ChatGPT</h2>
+          <p>
+            ChatGPT è un <strong>chatbot sviluppato dalla società americana OpenAI</strong>, fondata da Elon Musk, Sam Altman Greg Brockman, Ilya Sutskever, Wojciech Zaremba, and John Schulman nel 2015.<br>
+            La <b>prima versione di <i>Generative Pre-trained Transformer</i> (GPT-1) é, risalente al 2018</b>, un modello di Intelligenza Artificiale con <b>117 milioni di parametri</b> addestrato su enormi quantità di materiale proveniente da diverse <b>fonti e produzioni testuali digitali</b>, come articoli, notizie, libri e praticamente <b>tutto il materiale che si trova sul web</b>. Grazie a questo training, GPT-1 ha dimostrato di essere in grado di <b>comprendere il linguaggio naturale</b> e di generare testi di alta qualità, anche se con alcune limitazioni legate alla comprensione del contesto e alla complessità delle produzioni.<br>
+            Con il modello GPT-2, caratterizzato da 1.5 miliardi di parametri, sono stati ottenuti significativi miglioramenti, e nel 2020 è stata rilasciata <b>Chat GPT-3, una versione ancora più avanzata del modello, con 175 miliardi di parametri</b>, in grado di svolgere compiti che richiedono conoscenze specialistiche. La sua sconcertante capacità di comprensione e generazione di testo la rende uno strumento adatto a svariate applicazioni, dalla traduzione in varie lingue alla produzione di articoli, storie, canzoni o poesie fino alla scrittura o alla correzione di codici di programmazione.
+          </p>
+          <p>
+            “OpenAi era nata come società di ricerca aperta per produrre sistemi che andassero nella direzione di AI da mettere a disposizione pubblicamente, ma dopo qualche anno si sono resi conto che per sviluppare questi sistemi occorrevano grossi investimenti in infrastruttura che non riuscivano ad ottenere come ente no profit, quindi hanno costruito OpenAi come società" <a href="https://www.youtube.com/watch?v=ej5lEP1bmdQ"  target="_blank"> ha spiegato il professor Attardi</a>, docente di informatica all'Università di Pisa e pioniere delle tecnologie web. Ora esistono 2 enti openAi, Foundation e Società commerciale, in cui c’è un’importante partecipazione di Microsoft, che ha contribuito con 1 miliardo di risorse di calcolo e di strumenti che usa openAi per fare operazioni, e che opera a livello commerciale. Non si possono fare oggi operazioni con tecnologie di punta senza risorse di calcolo adeguate”.
+          </p>
+
+
+      <h2 id="sez2">Come funziona ChatGPT</h2>
+      <img src="img/dall-e12.png" class="image-container" alt="Robot in luogo con alberi e fiori">
+        <p>ChatGPT è un chatbot basato su intelligenza artificiale specializzato nel dialogo uomo-macchina. È in grado di comporre poesie, opere teatrali, testi di canzoni su un determinato tema e persino di spiegare le barzellette. Come siamo arrivati ad un modello con un livello di competenza morfosintattica così accurata e in grado di generare varie tipologie di testi in maniera veloce e tremendamente plausibile, che dimostra anche raffinate capacità di ragionamento?<br>
+
+          “Il <i>Natural Language Processing</i> (l'elaborazione del linguaggio naturale) ha visto miglioramenti senza precedenti nel corso degli ultimi anni, e i progressi sono avvenuti con la sostituzione dei cosiddetti sistemi di apprendimento tradizionali (modelli statistici, basati su sistemi di <i>machine learning</i>) a modelli di algoritmi <i>deep learning</i>" <a href="https://alemiaschi.github.io/files/Seminario_LABCD_8_marzo_2023.pdf"  target="_blank">ha spiegato Alessio Miaschi</a>, ricercatore del CNR, durante un <a href="http://www.labcd.unipi.it/seminari/le-risorse-linguistiche-al-tempo-delle-reti-neurali/" target="_blank"> seminario di cultura digitale</a> all'Università di Pisa.<br>
+        </p>
+        <p>
+          “In passato, dopo una lunga catena di <i>preprocessing</i> e annotazione linguistica, si passava alla fase di <i>modeling</i>, ovvero l’estrazione di una serie di caratteristiche e <i>features</i> da testi linguisticamente annotati, che venivano poi usate come caratteristiche in input per un modello di apprendimento usato per svolgere vari compiti di NLP, <i>entity recognition</i> etc.<br>
+          Adesso, con i modelli di<i>deep learning</i>, dopo una fase breve di <i>preprocessing</i>, il testo viene dato in pasto alla rete neurale che dopo il momento di apprendimento-addestramento, si specializza nella risoluzione di un determinato task.
+          Dagli anni 90, caratterizzati dall’utilizzo di modelli statistici, siamo passati allo sviluppo dei <b><i>neural language model".</i></b>
+        </p>
+
+          <h2 id="sez3">I neuroni artificiali</h2>
+        <p>
+          "Nel 2003 viene pubblicato un articolo scientifico, <a href="https://www.jmlr.org/papers/volume3/bengio03a/bengio03a.pdf" target="_blank"> <i>A Neural probabilistic language model</i></a>, in cui per la prima volta viene usato quel termine, ma si tratta di esperimenti che esistevano già da qualche anno prima" prosegue Miaschi.<br>
+          "Un <i>neural language model</i> è una rete neurale che viene addestrata per approssimare (ovvero risolvere) una funzione di <i>language modeling</i>: la rete neurale si modifica e si addestra in base alla funzione obiettivo che deve risolvere. Nel caso dei <i>neural language model</i>, la funzione obiettivo è di modellazione del linguaggio naturale. Ancora prima dell’avvento di questi utimi, avevamo i modelli di linguaggio probabilistici, che definiscono la funzione di language modeling come il calcolare la probabilità di una frase. Data una frase come insieme di parole, possiamo definire la probabilità della frase come la produttoria della probabilità di ogni singola parola date le parole precedenti. Questa probabilità è la funzione obiettivo.<br>
+          Nel 2003 Youshua Benjo e altri hanno proposto per la prima volta un modello in grado di risolvere tale funzione ricorrendo all’architettura di una rete neurale, quindi addestrando una rete neurale, da qui la definizione <i>neural probabilistic language model</i>.
+        </p>
+        <p>
+          Dal 2003 in poi ci sono stati tanti avanzamenti: nel 2013 l’introduzione di <a href="https://towardsdatascience.com/word2vec-explained-49c52b4ccb71" target="blank"> word2vec</a> (rete neurale artificiale a due strati progettata per elaborare il linguaggio naturale, l'algoritmo richiede in ingresso un corpus e restituisce un insieme di vettori che rappresentano la distribuzione semantica delle parole nel testo); pochi anni fa l’introduzione di <i>transformer</i>, l’architettura più utilizzata per lo sviluppo di modelli neurali del linguaggio allo stato dell’arte, che sfrutta il meccanismo dell’<i>attention</i> per creare rappresentazioni contestuali delle parole e imparare le relazioni tra di esse. Quando una sequenza di input viene processata, si crea una rappresentazione che non tenga informazione solo della parola in questione, ma anche di quelle circostanti che riguardano il contesto. Per ogni token della frase influiscono nella rappresentazione anche gli altri, con pesi diversi.
+          Queste nuove tecnologie hanno portato allo sviluppo dei modelli contestuali del linguaggio".
+        </p>
+    </div>
+  </div>
+    </div>
+  </div>
+  <!-- Sentiment analysis section -->
+  <div class="w3-container w3-light-grey w3-center w3-padding-32" id="sentiment">
+
+    <div class="w3-content w3-justify w3-container">
+      <h1 class="main-titles"><b>Ti odio o ti amo?</b></h1>
+
+      <div id="top-of-toc2" class="css-1ez01tu-BodyContainer e1s8k40s0">
+        <div class="css-uiylu1-LeftRailComponents e1s8k40s2">
+          <div class="TocContainer">
+            <div id="toc-block2" class="TableOfContentsContainer">
+              <a href="#sez4" id="toc-element-02" class="ElementWrapper-choicer">
+                <div class="pallino"></div>
+                <div class="scritta">
+                  <div>L'arrivo di ChatGPT</div>
+                </div>
+              </a>
+              <a href="#sez5" id="toc-element-1-2" class="ElementWrapper-choicer">
+                <div class="pallino"></div>
+                <div class="scritta">
+                  <div>Sentiment analysis</div>
+                </div>
+              </a>
+              <a href="#sez6" id="toc-element-3-2" class="ElementWrapper-choicer">
+                <div class="pallino"></div>
+                <div class="scritta">
+                  <div>Sentiment Analysis sui dataset in italiano e inglese</div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+        <img src="img/dall-e13.png" alt="Robot tra i fiori" class="w3-image w3-center w3-padding-32 force-center" width="600" height="650">
+      </div>
+
+      <h2 id="sez4">L'arrivo di ChatGPT</h2>
+
+      <p>
+        L'introduzione di ChatGPT ha generato attenzione da parte di un pubblico molto ampio: é stato rilasciato il 30 Novembre 2022 e a Gennaio 2023 aveva già più di 100 milioni di utenti, diventando l'applicazione software con <a href="https://www.reuters.com/technology/chatgpt-sets-record-fastest-growing-user-base-analyst-note-2023-02-01/" target="_blank">crescita di valore più veloce nella storia</a>.<br>
+        Questo tipo di tecnologia può essere definita <i>disruptive</i>, ovvero <i>di rottura</i>, talmente innovativa da generare cambiamenti repentini che portano a modi nuovi e differenti, rispetto al passato, di fare, pensare o interpretare ciò che ci circonda. <br>
+      </p>
+
+      <h2 id="sez5">Sentiment Analysis</h2>
+      <img src="img/dall-e3.png" alt="Computer circondato da robot" class="image-container-right">
+      <p>
+        Al fine di determinare come le persone hanno recepito questa nuovo tool, sono stati recuperati post dai social media Reddit e Twitter, in lingua inglese e italiana, ed è stata effettuata la <i>Sentiment Analysis</i> con due strumenti diversi, NLTK e Textblob, due librerie Python che permettono di eseguire operazioni di <i>Natural Language Processing</i> su testi.<br>
+        <i>L'analisi del sentimento</i> consiste in un processo di categorizzazione digitale di pezzi di testo attraverso l'uso di algoritmi, in modo da poter definire se una frase ha connotazione positiva, neutra oppure negativa.
+      </p><br>
+
+      <h2 id="sez6">Sentiment analysis sui dataset in italiano e inglese</h2>
+      <p>
+      Il grafico in figura mostra l'andamento del <i>sentiment</i> verso l'argomento "ChatGPT" nell'arco dei mesi.
+      Per Reddit è stata presa in considerazione solo la lingua inglese, mentre per Twitter sia l'italiano che l'inglese.
+      </p>
+      <p>
+      Tramite i pulsuanti è possibile esplorare rispettivamente:
+      <ul>
+        <li>L'andamento trimestrale nel dataset proveniente dai commenti su Reddit (relativo al periodo marzo 2023 - maggio 2023)</li>
+        <li>L'andamento del sentimento nel dataset di tweets in lingua inglese (relativo al periodo settembre 2022 - giugno 2022</li>
+        <li>L'andamento del sentimento nel dataset di tweets in lingua italiana (relativo al periodo settembre 2022 - giugno 2023)</li>
+      </ul>
+    </p>
+
+
+      <div class="graphics-btn-container">
+        <button id="graphics1-btn-sentiment">Reddit</button>
+        <button id="graphics2-btn-sentiment">Twitter.it</button>
+        <button id="graphics3-btn-sentiment">Twitter.com</button>
+      </div>
+      <div id="graphics-container-sentiment" class="chartContainer"></div>
+
+    </div>
+   
+    <p>Dall'osservazione dell'andamento delle curve possiamo notare come il sentimento verso ChatGPT sia complessivamente positivo, con l'eccezione del grafico per il dataset italiano che incorpora numerose etichette con valore neutro.</p>
+    <p>Il grafico costruito sui post di Reddit presenta un picco nella fase di aprile 2023, mentre quello per Twitter.com presenta il proprio nel periodo di gennaio/febbraio 2023, seguito da un'assottigliamento della curva procedendo verso la fase maggio/giugno 2023.</p>
+    <div>
+
+    </div>
+      
+  </div>
+
+  <!-- Utilizzi section -->
+  <div class="w3-container w3-light-grey w3-center w3-padding-32" id="utilizzi">
+    <h1 class="main-titles"><b>Interazione Uomo Macchina</b></h1>
+    <div id="top-of-toc3" class="css-1ez01tu-BodyContainer e1s8k40s0">
+      <div class="css-uiylu1-LeftRailComponents e1s8k40s2">
+        <div class="TocContainer">
+          <div id="toc-block3" class="TableOfContentsContainer">
+            <a href="#sez7" id="toc-element-03" class="ElementWrapper-choicer">
+              <div class="pallino"></div>
+              <div class="scritta">
+                <div>Utilizzi di ChatGPT</div>
+              </div>
+            </a>
+            <a href="#sez8" id="toc-element-1-3" class="ElementWrapper-choicer">
+              <div class="pallino"></div>
+              <div class="scritta">
+                <div>Twitter</div>
+              </div>
+            </a>
+            <a href="#sez9" id="toc-element-3-3" class="ElementWrapper-choicer">
+              <div class="pallino"></div>
+              <div class="scritta">
+                <div>Reddit</div>
+              </div>
+            </a>
+            <a href="#sez10" id="toc-element-3-4" class="ElementWrapper-choicer">
+              <div class="pallino"></div>
+              <div class="scritta">
+                <div>Argomenti più discussi</div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+   <img src="img/dall-e5.png" alt="Robot che dialoga con una bambina" class="w3-image w3-center w3-padding-32" width="600" height="650">
+    <div class="w3-content w3-justify w3-container">
+      <h2 id="sez7">Utilizzi di ChatGPT</h2>
+      <p>
+        Le persone interagiscono con ChatGPT in maniera variegata, dando libero sfogo alle proprie fantasie, inclinazioni e interessi. <br>
+        In generale, il chatbot viene utilizzato per scrivere elaborati di testo di vario tipo (email, presentazioni, introduzioni, racconti, sceneggiature etc) e per fare sintesi; è di aiuto nei compiti scolastici e accademici, e nella programmazione (è usato per creare siti web, o per fare debugging dei codici e chiedere spiegazioni).
+      </p>
+      <h2 id="sez8">Twitter</h2>
+      <p>
+        Su Twitter, sono stati individuati alcuni utlizzi particolari di ChatGPT:
+      </p>
+      <h3 class="green">Lingua inglese</h3>
+      <p>
+        <b><i>• Just for fun, we asked ChatGPT to write a haiku for us on fake news. And, <a href="https://t.co/ecglrw7ub" target="_blank">it delivered</a></i>
+      </b>
+      <p>
+        Purtroppo il tweet non è più disponibile e non è stato possibile leggere l'<i>haiku</i>, componimento poetico nato in Giappone nel XVII secolo).
+      </p>
+      <p>
+        <b><i>• We asked chat GPT to write a sex toy joke and this is what it wrote: Why was the vibrator feeling cold? Because it left its batteries in the refrigerator!</i></b>
+      </p>
+      <p>
+        <b><i>• I asked #ChatGPT to write a <a href="https://t.co/fjGiK1y5CA" target="_blank">prayer that can be said at same-sex blessings...</a></i></b>
+      </p>
+      <p>
+        <b><i>• Some interesting questions people ask ChatGPT: Can you generate a recipe for a three course meal? #ChatGPT #ChatGPTQuestions #Openai</i></b>
+      </p>
+      <p>
+        <b><i>• Chat GPT and Me — I ask ChatGPT <a href="https://t.co/b22jyyuqfj" target="_blank"> to Daydream</a></i></b>
+      </p>
+      <p>
+        <b><i>• I interviewed #ChatGPT who is a music enthusiast. Now here is yet another interesting use case of this AI. You could ask ChatGPT to pretend to be any role you want it to be and interview its AI just like you would interview a real person</i></b>
+      </p>
+      <h3 class="green">Lingua italiana</h3>
+      <p>
+        <b><i>• Abbiamo chiesto a #Chatgpt di creare una storia che includesse: Il sindaco di #Benevento, dei #cinghiali, il #golf e dell'acqua contaminata da #tetracloroetilene. <a href="https://t.co/oaKAEfaWTc" target="_blank">Quello che ne viene fuori</a> ci sembra una soluzione migliore di quelle adottate fino ad ora</i></b>
+      <p>
+        <b><i>• Nel 1970 dal dialogo fra #JamesBaldwin e #MargaretMead nasce il libro "Discussione sulla razza". Cosa si direbbero oggi davanti a #BlackLivesMatter? L'abbiamo <a href="https://t.co/bTySq6Q6d3"> chiesto a #ChatGPT</a></i></b>
+      </p>
+      <p>
+        <b><i>• Sono davvero preoccupato per il futuro dell’editoria italiana se i giornali tradizionali non si evolveranno". Abbiamo chiesto a #ChatGPT cosa farebbe per salvare il giornalismo italiano. <a href="https://t.co/q1cCCxA77C" target="_blank">Questa</a> è stata la sua risposta</i></b>
+      </p>
+      <p>
+        <b><i>• Chiesto a chat gpt di <a href="https://t.co/0MngK293WM" target="_blank"> scrivere un testo usando i titoli della tracklist</a> e STO URLANDO</i></b>
+      </p>
+      <p>
+        <b><i>• Ho chiesto a #ChatGPT se #dantealighieri si potesse considerare #fascista. Ecco la sua  <a href="https://t.co/WJnSAlCjN" target="_blank">risposta</a></i></b>
+      </p>
+      <p>
+        Purtroppo anche questo contenuto non è più disponibile.
+      </p>
+      <p>
+        <b><i>• Ho chiesto a #ChatGPT quante volte in 24 ore le lancette di un orologio formano un angolo di 90 gradi. É stato impreciso ed evasivo come ero io durante le interrogazioni di chimica al liceo, ha anche simulato un attacco di dissenteria e la morte del nonno per prendere tempo</i></b>
+      </p>
+      <p>
+        <b><i>• Stamattina da Linus e Nicola parlano di intelligenza artificiale. Combinazione l’altro ieri sera, abbiamo chiesto a chat GPT un finale alternativo di Lost. Non ci è piaciuto però ho apprezzato lo sforzo: pronto in pochissimi secondi</i></b>
+      </p>
+      <p>
+        <b><i>• Ho chiesto a #ChatGPT di scrivere un monologo per #Sanremo2023. Se qualcuno di voi conduttori ancora non ha preparato niente oppure ha scritto la solita roba cringe prendete e <a href="https://t.co/DEHBWf4VSv">usufruitene tutti</a> </i></b>
+      </p>
+      <h2 id="sez9">Reddit</h2>
+      <p>
+          Su Reddit in lingua inglese, sono stati individuati altri usi di ChatGPT, tra cui:
+      </p>
+        <ul id="reddit_use">
+          <li>come generatore di numeri casuali;</li>
+          <li>come motore di ricerca;</li>
+          <li>per scopi didattici da insegnanti e studenti;</li>
+          <li>come chatbot per conversare normalmente o in determinati linguaggi, come slang da strada o linguaggi estremamente informali;</li>
+          <li>come consulente finanziario, in particolare per attuare strategie di investimento per i prossimi anni.</li>
+        </ul>
+      <p>
+        Inoltre, su Reddit si discute anche dei possibili usi futuri dello strumento, con relative implicazioni positive e negative per la società. In particolare, tra gli argomenti più dibattuti ci sono:
+      </p>
+        <ul id="reddit_future_use">
+          <li>casi di fake news generate da ChatGPT e che egli stesso ha dichiarato come fatti reali. Molti commenti discutono della mancanza di consapevolezza da parte degli utenti su cosa sia e come debba essere usato ChatGPT, alcuni sostengono che venga usato impropriamente come motore di ricerca e che i contenuti generati dovrebbero essere sempre compresi e riscritti dagli utenti, in quanto le IA non hanno ancora raggiunto un'intelligenza tale da poterci fare totalmente affidamento;</li>
+          <li>il caso di un assistente avvocato che, per lo svolgimento della professione, si affida anche a ChatGPT e questo da alcuni utenti non viene visto di buon occhio;</li>
+          <li>qualche utente che pensa che ChatGPT possa finire come il Watson di IBM, il quale ha avuto un primo periodo di visibilità per poi sparire nel dimenticatoio. Inoltre, si parla anche della possibilità che ChatGPT venga rimpiazzato da IA con meno blocchi morali e che il settore sarà enormemente diverso tra due anni;</li>
+          <li>presunta incoerenza da parte di alcuni insegnanti nel bandire l'uso di Wikipedia per poi permettere quello di ChatGPT. La critica principale risiede nel fatto che entrambi richiedano verifiche da parte dell'utente sulla veridicità dei contenuti;</li>
+          <li>la sostituzione di determinati lavori, in particolare si parla dei fisioterapisti e del fatto che andrebbero sostituiti solamente quelli ritenuti meno bravi degli altri;</li>
+          <li>la possibilità che, specialmente negli Stati in cui il sistema sanitario è a pagamento, le IA siano più efficienti degli umani nel diagnosticare malattie ai pazienti e nel controllare, ed eventualmente negare, l'idoneità degli stessi al trattamento sanitario;</li>
+          <li>il rischio di sostituzione di intere aziende tramite l'uso di IA.</li>
+        </ul>
+      <div id="topic-modeling">
+        <h2 id="sez10">Argomenti più discussi</h2>
+        <p>
+          Il grafico seguente è un confronto tra topics nei dataset di <strong>Twitter</strong> e <strong>Reddit</strong>, calcolati con l'utilizzo di NLTK Vader e TextBLob.
+          Interessante osservare come NLTK Vader registri una sostanziale differenza di sentimento sul topic della <i>privacy</i> e del <i>ban</i> tra i due social network, con una netta oscillazione tra valori positivi e negativi. 
+        </p>
+        <div id="topic-container" class="chartContainer"></div>
+      </div>
+      <p>
+        Il confronto basato sui valori registrati da TextBlob mostra un minore distacco sugli argomenti discussi nei post di Twitter e Reddit.
+      </p>
+    </div>
+  </div>
+
+  <!-- Parole e tendenze section -->
+  <div class="w3-container w3-dark-grey w3-padding-32 w3-text-light-grey" id="trends">
+    <div class="w3-content w3-justify w3-container">
+      <h1 class="main-titles"><b>Parole e tendenze</b></h1>
+      <div id="top-of-toc4" class="css-1ez01tu-BodyContainer e1s8k40s0">
+        <div class="css-uiylu1-LeftRailComponents e1s8k40s2">
+          <div class="TocContainer">
+            <div id="toc-block4" class="TableOfContentsContainer">
+              <a href="#sez11" id="toc-element-04" class="ElementWrapper-choicer">
+                <div class="pallino"></div>
+                <div class="scritta">
+                  <div>Parole più frequenti</div>
+                </div>
+              </a>
+              <a href="#sez12" id="toc-element-1-4" class="ElementWrapper-choicer">
+                <div class="pallino"></div>
+                <div class="scritta">
+                  <div>Trigrammi più frequenti</div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <img src="img/dall-e11.png" alt="Robot che esegue calcoli" class="w3-image w3-padding-32 w3-center force-center" width="600" height="650">
+      <div class="graphics-btn-container">
+        <h2 id="sez11">Parole più frequenti</h2>
+        <p>
+          Il grafico seguente mostra la distribuzione delle trenta parole con maggiore ricorrenza nei tre dataset per ciascuna categoria di sentimento.
+          Ciascun cerchio è relativo ad una parola, il colore ne indica la percezione secondo il <i>sentiment analyser</i>, mentre l'altezza ne riporta la frequenza assoluta.
+        </p>
+        <button id="graphics1-btn-words">Reddit</button>
+        <button id="graphics2-btn-words">Twitter.it</button>
+        <button id="graphics3-btn-words">Twitter.com</button>
+      </div>
+      <div id="graphics-container-words" class="chartContainer"></div>
+      <div id="graphics-container-words2" class="chartContainer"></div>
+
+      <h3 class="green">Parole più frequenti su Twitter in Inglese</h3>
+      <p>Come si può osservare dalle <i>word cloud</i>, le parole più utilizzate nei post sono <b class="green">ask</b>, <b class="green">question</b>, <b class="green">write</b>, <b class="green">create</b>, <b class="green">content</b>, <b class="green">future</b>, <b class="green">technology</b>, <b class="green">Google</b> termini che rimandano ad un utilizzo di ChatGPT in vari ambiti e domini legati alla produzione di contenuti testuali.</p>
+      <div class="image-container">
+        <figure>
+          <img src="img/WordcloudENG.png" alt="WordCloud delle parole inglesi" class="w3-image w3-padding-32" width="600" height="650">
+          <figcaption>WordCloud: rappresentazione visuale delle parole più usate su Twitter.com</figcaption>
+        </figure>
+      </div>
+      <h3>Esplorazioni sui dati in inglese</h3>
+      <p>
+        <b class="green">Math</b>: svariati tweet in lingua inglese si riferiscono all'incapacità di ChatGPT di svolgere compiti matematici complessi, altri invece ne esaltano le doti, dunque l'opinione degli utenti su Twitter sembra divisa su questo tema.
+      </p>
+      <p>
+        <b class="green">Erotic</b>: alcuni utenti hanno interagito con ChatGPT per creare componimenti erotici di varia tipologia, dal racconto sci-fi alla poesia. È stato individuato in questo ambito un utilizzo ancora più particolare:
+      </p>
+      <p>
+        <b><i>Writing erotic prompts for Chat GPT hoping to be the first person to make AI cum. It’s like the Turing Test</i></b>
+      </p>
+      <p>
+        <b class="green">Sex</b>: per la lingua inglese gli argomenti trattati variano dalla riflessione sul sessismo alle notizie riguardo al "traffico sessuale" o allo <a href="https://time.com/6247678/openai-chatgpt-kenya-workers" target="_blank"> sfruttamento di manodopera in Kenya</a> per il <i>fine tuning</i> di ChatGPT.
+      </p>
+      <p>
+      <p>
+        <b><i>From #ChatGPT Gender identity is not the same as biological sex, which refers to the physical and physiological characteristics typically associated with being male or female, such as chromosomes, hormones, and reproductive organs.</i></b>
+      </p>
+      <p>
+        <b><i>Sexual tension between me and #ChatGPT is on fire</i></b>
+      <p>
+      <p>
+        <b><i>Just had sex with \#ChatGPT. <a href="https://t.co/v8uJY2MNdr" target="_blank">Shit felt human to me...</a> </i></b>
+      </p>
+      <p>
+        <b><i>Funny how chatgpt dont wan’t you to write a moviescript where a girl falsly report sexual assault #ChatGPT #beliveallwomen</i></b>
+      </p>
+      <p>
+        <b><i>I see what all the fuss is about #chatgpt  'Write a song about <a href="https://t.co/o2ybFps9j8" target="_blank"> smashing the patriarchy in the style of the sex pistols</a></i></b>
+      </p>
+
+      <h3 class="green">Parole più frequenti su Twitter in Italiano</h3>
+      <p>Anche per l'italiano le parole più utilizzate nei post sono <b class="green">scritto</b>, <b class="green">strumento</b>, <b class="green">chiesto</b>, <b class="green">futuro</b>,<b class="green">lavoro</b>, <b class="green">fare</b>, <b class="green">tecnologia</b>, <b class="green">Google</b>, ma compaiono anche <b class="green">Bing</b> e <b class="green">Microsoft</b>, partner commerciali di OpenAi. </p>
+      <div class="image-container">
+        <figure>
+          <img id="hover" src="img/WordcloudITA.png" alt="worcloud delle parole italiane più frequenti" class="w3-image w3-padding-32" width="600" height="650">
+          <figcaption>WordCloud: rappresentazione visuale delle parole più usate su Twitter.it</figcaption>
+        </figure>
+      </div>
+      <h3>Esplorazioni sui dati in italiano</h3>
+      <p>
+        <b class="green">Matematica</b>: in italiano i post contenenti la parola "matematica" sono legati all'uso di ChatGPT da parte degli studenti a scuola e questa abitudine suscita preoccupazioni di carattere pedagogico ed educativo.
+      </p>
+      <p>
+        Nel Corpus di tweet in italiano non compaiono post relativi ad un utilizzo erotico di ChatGPT, mentre ricercando nei dati attraverso una keyword semanticamente vicina, ma più diretta, sono state individuate alcune informazioni interessanti:
+      </p>
+      <p>
+        <b class="green">Sesso</b>:
+        In un tweet si fa riferimento al fenomeno delle truffe online, in particolare a quelle definite "romantiche": attraverso l'inganno la vittima viene coinvolta in una relazione romantica che ha come fine quello di estocere denaro. <br>
+        "L’età delle persone circuite dai falsi corteggiatori sui social si aggira intorno ai 50 anni e a rimanerne coinvolte spesso sono donne di estrazione sociale eterogenea" si può leggere sul <a href="https://www.commissariatodips.it/consigli/per-i-cittadini-e-i-ragazzi/truffe-romantiche-romance-scam/index.html" target="_blank">
+        sito della Polizia</a>. "La realtà dei casi rivela infatti che la maggioranza delle vittime non è più giovanissima e che, magari dopo una relazione sentimentale finita male e con figli che vivono autonomamente, si diventa facile preda chattando davanti al computer o su uno smartphone".
+      </p>
+      <p>
+        <b><i>Temo che il successo è ancora significativo. Aggiungi #ChatGPT ed il gioco è fatto #RomanceScam #Sexstortion</i></b>
+      </p>
+      <p>
+        Altri 2 utenti invece hanno utilizzato la chat per attività sessuali:
+      </p>
+      <p>
+        <b><i>Allora ChatGPT: Come convincere le donne a mandarti le foto dei piedi senza sembrare un maniaco sessuale</i></b>
+      </p>
+      <p>
+        <b><i>#ChatGPT ecco cosa succede se chiedi di <a href="https://t.co/2t8mdch6Ak" target="_blank">simulare una chat a sfondo sessuale </a> </i></b>
+      </p>
+
+      <div class="graphics-btn-container">
+        <h2 id="sez12">Trigrammi più frequenti</h2>
+        <button id="graphics1-btn-trigrams">Reddit</button>
+        <button id="graphics2-btn-trigrams">Twitter.it</button>
+        <button id="graphics3-btn-trigrams">Twitter.com</button>
+      </div>
+
+      <div id="graphics-container-trigrams" class="chartContainer"></div>
+      <div>
+        <p>
+          Il grafico mostra la distribuzione dei <i>trigrammi</i> più frequenti nell'arco dei mesi.
+          Per ogni social è possibile avere:
+          <ul>
+            <li>
+              una visione complessiva dei trigrammi più frequenti
+            </li>
+            <li>
+              una visione dettagliata relativa al mese selezionato
+            </li>
+          </ul>
+        </p>
+        <p>Il gradiente di colore indica la distribuzione del sentimento rispetto al <i>trigramma</i>, l'intensità di colore aumenta all'aumentare del valore di positività, diminuisce viceversa.</p>
+      </div>
+      <div>
+        <h3>Cosa ci dicono i trigrammi estratti dai tre datasets</h3>
+        <p>
+          Nel dataset di Twitter in inglese compaiono i <i>trigrammi</i> "banned italy privacy" e "google code red", che si riferiscono verosimilmente alle <a href="  https://www.forbes.com/sites/davidphelan/2023/01/23/how-chatgpt-suddenly-became-googles-code-red-prompting-return-of-page-and-brin/" target="_blank"> preoccupazioni suscitate dall'introduzione di ChatGPT</a> 
+          sia a livello sociale che economico. Il <i>trigramma</i> "Wharton mba exam", 
+          invece, riguarda un esperimento condotto da un professore della <i>University of Pennsylvania’s Wharton School</i>: 
+          il <strong>Chatbot GPT-3</strong> è stato in grado di 
+          <a href="https://knowledge.wharton.upenn.edu/podcast/wharton-business-daily-podcast/chatgpt-passed-an-mba-exam-whats-next/" target="_blank"> superare l'esame finale</a> 
+          per il Master in <i>Business Administration</i> (MBA). 
+          I <i>trigrammi</i> "launch poe way" e "quora launches poe" rimandano all'uscita di Poe, 
+          un software che consente alle persone di porre domande, 
+          ottenere risposte istantanee e intrattenere conversazioni con diversi chatbot potenziati dall’intelligenza 
+          artificiale, su Quora, una piattaforma forum dove gli utenti possono pubblicare domande e 
+          risposte su qualunque argomento. Inizialmente Poe era disponibile per iOS e per desktop, 
+          poi sono state introdotte le <i>subscriptions</i>, che forniscono agli utenti paganti 
+          l’accesso a bot basati su due modelli linguistici: GPT-4 di OpenAI e Claude+ di Anthropic. 
+          I <i>trigrammi</i> "100 milliion users", "100 million monthly" e "monthly active users" 
+          si riferiscono al numero strabiliante 
+          di utenti raggiunto da ChatGPT in breve tempo; "plugin accessing website", "browser plugin accessing" e "web browser plugin"
+          rimandano alle estensioni del chatbot per navigare sul web, 
+          in modo da ottenere informazioni più aggiornate e ampliare le potenzialità dello strumento.
+        </p>
+        <p>
+          Dall'analisi dei <i>trigrammi</i> in lingua italiana si può notare che la distribuzione si articola su alcuni argomenti ben definiti, in particolare troviamo tematiche relative allo "scambio di conoscenze", all'emersione di una nuova tecnologia che viene definita come "intelligenza". Tra i trigrammi dal valore negativo si segnalano "inizio fine google" (dicembre 2022), relativo alla questione del rimpiazzo dei tradizionali motori di ricerca da parte di ChatGPT, ma anche "ruba credenziali social" (Febbraio 2023), un trigramma che compare proprio antecedentemente all'imposizione del ban del garante della privacy. Relativamente al confronto tra Google e Chat GPT si trovano anche i trigrammi "bard risposta google" ed "ecco bard risposta" (entrambi di Giugno 2023) che segnalano l'uscita del nuovo ChatBot sviluppato dall'azienda statunitense.
+        </p>
+      </div>
+      
+      
+    </div>
+  </div>
+
+
+
+   <!-- Intelligenza section -->
+  <div class="w3-container w3-dark-grey w3-padding-32 w3-text-light-grey" id="intelligenza">
+    <div class="w3-content w3-justify w3-container">
+      <h1 class="main-titles"><b>Intelligenza Artificiale</b></h1>
+      <div id="top-of-toc5" class="css-1ez01tu-BodyContainer e1s8k40s0">
+        <div class="css-uiylu1-LeftRailComponents e1s8k40s2">
+          <div class="TocContainer">
+            <div id="toc-block5" class="TableOfContentsContainer">
+              <a href="#sez13" id="toc-element-05" class="ElementWrapper-choicer">
+                <div class="pallino"></div>
+                <div class="scritta">
+                  <div>ChatGPT è realmente in grado di capire?</div>
+                </div>
+              </a>
+              <a href="#sez14" id="toc-element-1-5" class="ElementWrapper-choicer">
+                <div class="pallino"></div>
+                <div class="scritta">
+                  <div>Proprietà emergenti</div>
+                </div>
+              </a>
+              <a href="#sez15" id="toc-element-3-5" class="ElementWrapper-choicer">
+                <div class="pallino"></div>
+                <div class="scritta">
+                  <div>ChatGPT è intelligente?</div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <img src="img/dall-e4.png" alt="Robot immerso in una dimensione onirica" class="w3-image w3-center w3-padding-32 force-center" width="600" height="650">
+      <h2 id="sez13">ChatGPT è realmente in grado di capire?</h2>
+      <p>I large language models come ChatGPT sono talmente grandi e complessi da suscitare sorprese inaspettate: hanno iniziato a mostrare comportamenti sorprendenti, che non erano stati previsti. <br>
+       “Sono meravigliato dalle capacità che questi modelli hanno sviluppato” <a href="https://www.quantamagazine.org/the-unpredictable-abilities-emerging-from-large-ai-models-20230316/" target="_blank"> ha dichiarato Ethan Dyer</a>, computer scientist di Google Research che lavora da anni nel campo dell’AI. “È sorprendente perché questi modelli in teoria hanno una sola direttiva: prendere in input una stringa di testo e predire cosa verrà dopo, ripetutamente, su basi puramente statistiche. Gli esperti nel settore avevano previsto che con l’aumentare della dimensione dei dati sarebbero migliorate le performance su task già noti, ma non si aspettavano che i modelli all’improvviso sarebbero stati in grado di svolgere così tante nuove (e imprevedibili) attività”.</p>
+      <h2 id="sez14">Proprietà emergenti</h2>
+      <img src="img/dall-e14.png" class="image-container-right" alt="Robot che saluta">
+      <p>A quanto pare i LLMs sembrano sviluppare centinaia di capacità non previste - dai calcoli matematici alla produzione di testi e di codici, fino al riconoscimento dei titoli di film tramite emoji (come in un esperimento condotto dal team di Dyer).<br>
+      I modelli linguistici odierni sono stati dimensionati principalmente in base a tre fattori: quantità di calcolo, numero di parametri e dimensione del set di dati di addestramento. Un'abilità è considerata "emergente" se non è presente nei modelli più piccoli ma lo è in quelli più grandi. In generale, si può considerare l'emergere di nuove proprietà come una funzione di molte variabili correlate, la scala in cui si osserva per la prima volta l'emergere di un'abilità dipende da una serie di fattori e non è una proprietà immutabile, le prestazioni sembrano migliorare notevolmente oltre un certo ordine di grandezza dei parametri.
+      “I fenomeni complessi possono essere ricondotti a una semplice legge probabilistica, nel caso di un language model si tratta di predire la prossima parola" ha dichiarato il professor Giuseppe Attardi in <a href= "https://www.youtube.com/watch?v=ej5lEP1bmdQ" target="_blank">un'intervista online</a> in cui ci si interroga sullo sviluppo delle AI. <br>
+      "Emerge un comportamento sorprendente perché la nostra mente non è capace di capire un sistema complesso. GPT 4 ha superato una trentina di test per ammissione - a medicina, giurisprudenza, scienze infermieristiche, li supera tutti.
+      Possiamo dire che non capisce? Non usa il nostro metodo di ragionare, ma dire che non capisce è un salto logico non garantito.<br>
+      Effettivamente non sappiamo spiegare il loro comportamento, non sappiamo come sono fatti, sappiamo che usano una semplice legge di probabilità, ma con tantissime parole e processi ora sanno rispondere anche a domande complicate […] Il sistema apprende il significato delle parole nel contesto, quante più parole o frasi gli vengono sottoposte tanto più è dettagliata la rappresentazione delle parole che esso produce.
+      Il comportamento emergente non è al momento spiegabile, nemmeno gli stessi ricercatori che lo stanno osservando sono in grado di spiegarlo, ha sorpreso tutti. Ci sono degli studi. Alcuni sostengono che questi sistemi non abbiano  capacità di fare ragionamenti matematici o logici, nessuno ha mai insegnato loro a fare conti, eppure in certi casi riesce a fare anche ragionamenti complessi. <br>
+      In genere i sistemi di apprendimento automatico arrivano ad un certo plateau, la cosa sorprendente è che nel caso dei language model questo non è avvenuto, non si vede ancora la curva rallentare la crescita, con l’aggiunta di nuovi dati la curva continua a crescere. Ci sono  risultati più stupefacenti: più si aumentano i dati, più avviene fenomeno chiamato delle capacità emergenti: il sistema diventa in grado di fare cose che non sapeva fare, che non erano previste. Spuntano fuori, c’è una specie di salto quantico che avviene a certo momento con la crescita della dimensione dei sistemi”.</p>
+      <h2 id="sez15">ChatGPT è intelligente?</h2>
+      <img src="img/dall-e15.png" class="image-container" alt="Robot che ballano">
+      <p>"Nessuno ha insegnato a GPT-3, o GPT-4, a fare i calcoli. Questo comportamento viene fuori dall’addestramento su una grande quantità di dati utilizzando miliardi di parametri" <a href="http://www.labcd.unipi.it/seminari/le-risorse-linguistiche-al-tempo-delle-reti-neurali/"  target="_blank">ha spiegato il professore Felice Dell’Orletta</a>, docente di inguistica computazionale all'Università di Pisa e ricercatore al CNR, duarante il seminario citato sopra. "I parametri sono variabili, memorizzarne 2 miliardi vuol dire avere un’infinità di server. Ogni volta che usiamo ChatGPT bruciamo 3 foreste. Per ora abbiamo dei super computer che nessuno può gestire, a parte 2 o 3 aziende che hanno decomposto tutto il web in micro parti di informazione che in qualche modo ricollegano tramite la rete neurale in maniera intelligente, ovvero attraverso un qualche tipo di comportamento che non è casuale. <br>
+      ChatGPT riorganizza l’informazione e la riutilizza in maniera da permettere di risolvere dei task anche quando questi task non sono conosciuti. Questa cosa è intelligenza? No, è un comportamento emergente che viene fuori da una simulazione del dato umano. Quando un modello in qualche modo simulerà al 100% un comportamento che tu consideri intelligente, sta a te definirlo intelligente oppure no, però sta simulando un comportamento, e da questa simulazione verranno fuori tanti altri comportamenti.
+      È vero che il dato linguistico manca di correlazione con la concretezza del mondo reale, però contiene tanta informazione. Non è un caso che questi comportamenti emergenti si siano visti la prima volta sui testi, gli stessi algoritmi sono stati applicati anche alle immagini, ma non è  emerso lo stesso comportamento intelligente. Lo abbiamo potuto osservare sul testo. Non è una casualità che le parole, che la capacità del linguaggio, siano forse ciò che più ci distingue dagli altri animali. <br>
+      Non è la vista, la forza o la velocità, è il linguaggio, e il sistema ha fatto emergere questa competenza sul linguaggio. Credo che quello che abbiamo visto oggi sul testo è un qualcosa che ci ha sorpreso tutti, forse qualcuno se lo immaginava, ma non in così poco tempo. Chiamarla intelligenza oppure no è un modo per definire le cose. Sicuramente funziona in maniera diversa da un essere umano. C’è ragionamento o non c’é, sicuramente non c’è quello umano, però c’è una simulazione di quel comportamento. Quando la simulazione è al 100% poi decidi tu se chiamarla A o chiamarla B.<br>
+      C’è stato uno scandalo perché tantissimi Kenyani sono stati sfruttati per creare dei Corpus Gold (annotati in maniera corretta) per addestrare ChatGPT. Questo vuol dire che di dati linguistici annotati ne abbiamo bisogno ancora tanto,  quindi il passaggio ad una macchina in grado di fare tutto senza una supervisione umana è ancora molto distante.
+      Possiamo fidarci che siano stati utilizzati solo i dati del web? Comunicazioni coi cellulari, interazioni uomo macchina, davanti alla tv o con Amazon Alexa, potrebbero essere tutti dati che vengono utilizzati. Non possiamo saperlo con esattezza perché sono fatti da aziende private, e questo è un altro grande problema". <br>
+      Come ha ricordato il professor Attardi nell'intervista citata sopra “Non ha senso dare la colpa alla tecnologia, i danni sono dovuti alle aziende che la sfruttano in maniera distorta. Bisogna distinguere tra tecnologia e uso malevolo e deleterio di essa. L’etica è una caratteristica umana, che non ha a che fare con la tecnologia, assumiamo che le persone abbiano libero arbitrio e puniamo le loro azioni, non gli strumenti che utilizzano”.
+    </p>
+    </div>
+  </div>
+  <!-- Footer -->
+  <footer class="w3-container w3-padding-32 w3-grey">
+    <div class="w3-row-padding">
+      <div class="w3-third">
+        <h3>Progetto Data Journalism</h3>
+        <ul id="project">
+          <li>Luglio 2023</li>
+        </ul>
+      </div>
+
+      <div class="w3-third">
+        <h3>Professori</h3>
+        <ul id="teachers">
+          <li>Angelica Lo Duca</li>
+          <li>Andrea Marchetti</li>
+        </ul>
+      </div>
+
+      <div class="w3-third">
+        <h3>Autori</h3>
+        <ul id="authors">
+          <li>Claudio De Martino</li>
+          <li>Giorgia Guidetti</li>
+          <li>Martina F. Rossi</li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <div class="w3-black w3-center w3-padding-24"> </div>
+
+<!-- End page content -->
+</div>
+</body>
+</html>

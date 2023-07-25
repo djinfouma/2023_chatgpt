@@ -1,0 +1,19 @@
+ <script> 
+    (function(vegaEmbed) {
+      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "data": {"name": "data-f5aa40d221b8f095fd9ec2a8cf953d4d"}, "mark": {"type": "line", "opacity": 0.1}, "encoding": {"color": {"field": "sentiment_complete", "legend": {"orient": "right"}, "scale": {"domain": ["Positivo", "Neutrale", "Negativo"], "range": ["#ADFC92", "#788BFF", "#F44E3F"]}, "title": "Sentimento registrato", "type": "nominal"}, "opacity": {"value": 0.9}, "x": {"axis": {"format": "%B %Y", "tickCount": 12, "title": "Periodo"}, "field": "date", "type": "temporal"}, "y": {"axis": {"title": "Numero di tweets"}, "field": "Value", "type": "quantitative"}}, "height": 600, "title": {"text": "Evoluzione del sentimento verso Chat GPT nell'arco dei mesi", "subtitle": "Visualizzazione dei valori relativi al dataset di Tweets"}, "width": 800, "$schema": "https://vega.github.io/schema/vega-lite/v5.8.0.json", "datasets": {"data-f5aa40d221b8f095fd9ec2a8cf953d4d": [{"date": "September 2022", "sentiment_complete": "Negativo", "Value": 64}, {"date": "October 2022", "sentiment_complete": "Negativo", "Value": 103}, {"date": "December 2022", "sentiment_complete": "Negativo", "Value": 12890}, {"date": "January 2023", "sentiment_complete": "Negativo", "Value": 21900}, {"date": "February 2023", "sentiment_complete": "Negativo", "Value": 6205}, {"date": "March 2023", "sentiment_complete": "Negativo", "Value": 3109}, {"date": "April 2023", "sentiment_complete": "Negativo", "Value": 2138}, {"date": "May 2023", "sentiment_complete": "Negativo", "Value": 1901}, {"date": "June 2023", "sentiment_complete": "Negativo", "Value": 999}, {"date": "September 2022", "sentiment_complete": "Neutrale", "Value": 101}, {"date": "October 2022", "sentiment_complete": "Neutrale", "Value": 75}, {"date": "December 2022", "sentiment_complete": "Neutrale", "Value": 26609}, {"date": "January 2023", "sentiment_complete": "Neutrale", "Value": 44188}, {"date": "February 2023", "sentiment_complete": "Neutrale", "Value": 11888}, {"date": "March 2023", "sentiment_complete": "Neutrale", "Value": 4615}, {"date": "April 2023", "sentiment_complete": "Neutrale", "Value": 3418}, {"date": "May 2023", "sentiment_complete": "Neutrale", "Value": 3131}, {"date": "June 2023", "sentiment_complete": "Neutrale", "Value": 1545}, {"date": "September 2022", "sentiment_complete": "Positivo", "Value": 114}, {"date": "October 2022", "sentiment_complete": "Positivo", "Value": 104}, {"date": "December 2022", "sentiment_complete": "Positivo", "Value": 37278}, {"date": "January 2023", "sentiment_complete": "Positivo", "Value": 67973}, {"date": "February 2023", "sentiment_complete": "Positivo", "Value": 17068}, {"date": "March 2023", "sentiment_complete": "Positivo", "Value": 7458}, {"date": "April 2023", "sentiment_complete": "Positivo", "Value": 5070}, {"date": "May 2023", "sentiment_complete": "Positivo", "Value": 4859}, {"date": "June 2023", "sentiment_complete": "Positivo", "Value": 2506}]}};
+      var embedOpt = {"mode": "vega-lite"};
+
+      function showError(el, error){
+          el.innerHTML = ('<div style="color:red;">'
+                          + '<p>JavaScript Error: ' + error.message + '</p>'
+                          + "<p>This usually means there's a typo in your chart specification. "
+                          + "See the javascript console for the full traceback.</p>"
+                          + '</div>');
+          throw error;
+      }
+      const el = document.getElementById('vis');
+      vegaEmbed("#vis", spec, embedOpt)
+        .catch(error => showError(el, error));
+    })(vegaEmbed);
+  </script>
+  
